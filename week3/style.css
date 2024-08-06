@@ -1,0 +1,86 @@
+* {
+    color: hotpink;
+}
+
+h1 {
+    color: red;
+    font-size: 4rem;
+    padding: 5px;
+    text-transform: uppercase;
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    color: aqua;
+    font-size: 1.6rem;
+}
+
+/* use ctrl+/ to do this  */
+
+p,
+h3,
+.my-class {
+    color: purple;
+}
+
+/* h3 {
+    color: black;
+} */
+
+.my-class {
+    color: darkred;
+}
+
+#my-id {
+    color: gold;
+}
+
+p > strong {
+    color: gold;
+}
+
+span {
+    display: block;
+}
+
+article {
+    text-align: center; 
+    font-weight: bold;
+    font-size: 18px;
+    border: 10px solid brown;
+    padding: 10px;
+}
+
+p {
+    border: 5px dashed orange;
+    padding: 40px;
+    /* width: 200px; */
+    line-height: 1.7;
+    background-color: rgb(255, 175, 175);
+}
+
+.grey-qo-regular {
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.dancing-script {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  a {
+    color: blue;
+  }
+  a:hover {
+    color: orange;
+  }
+
+  p:hover {
+    background-color: aqua;
+  }
