@@ -1,0 +1,38 @@
+* {
+    background-color: #FFC0CB;
+}
+h1 {
+    color: red;
+    font-size: 6rem;
+    font-family: "Grey Qo", cursive;
+    font-weight: 400 bold;
+    font-style: normal;
+    text-align: center; 
+    height: 50px;
+}
+article {
+    font-weight: bold;
+    font-size: 18px;
+    border: 10px solid brown;
+    padding: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.dancing-script {
+    font-optical-sizing: auto;
+    font-weight: 500 bold;
+    font-style: normal;
+  }
+p {
+    border: 5px dashed orange;
+    padding: 20px;
+    line-height: 1.7;
+    margin-right: 180px;
+    margin-left: 180px;
+    background-color: white;
+}
+h2 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+    text-align: center; 
+}
