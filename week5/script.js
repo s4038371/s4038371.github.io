@@ -59,7 +59,19 @@
 // console.log(numArray);
 
 
-// console.log("");
+// console.log(""); 
+
+// number let a = 10;
+// string let b = "Fuck";
+// boolean let c = true or false;
+// null let d = null;
+// undefined let e;
+// object let f = { a: 10, b: "fuck"};
+
+// let arr = {1,3,5,7,9}
+// let strArr = ["a","b","c"]
+// they start with position 0 arr[0] => 1 strArr [0] = "a"
+
 
 let names =["A", "B", "C", "D", "E"];
 console.log(names.length);
