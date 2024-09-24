@@ -46,7 +46,7 @@ img {
   width: 75%;
   height: 400px;
   border-radius: 5px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .video-list {
