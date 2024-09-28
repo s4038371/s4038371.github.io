@@ -15,26 +15,14 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- as always we have the outer box that acts as a container for video  -->
     <div class="outer">
-      <!-- We divide the content of the box into three sections
-      1. video-container = it contains the videoplayer as well as playlist
-      2. video-title = it contains meta information about video currently being played
-      3. video-controls = it gives options for users to control the video such as 
-         play, pause, make it fullscreen etc.  -->
       <section class="video-container">
-        <!-- we further divide video-container into two sections
-        1. video player
-        2. video-list: a section containing clickable images of videos 
-           that can be played.  -->
         <video id="my-video" controls>
           <source src="stardust.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         <section class="video-list">
-          <!-- We use buttons, whenever user clicks on them, the correspoding 
-          video will be played  -->
           <button id="first-video-btn">
             <img id="first-video-img" src="zenscape.png" alt="Zenscape" />
           </button>

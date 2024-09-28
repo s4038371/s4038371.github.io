@@ -1,19 +1,21 @@
-const myVideo = document.querySelector("#my-video")
-console.log(myVideo)
-
-const playPauseBtn = document.querySelector("#play-pause-btn")
-console.log(playPauseBtn)
-
-playPauseBtn.addEventListener("click", togglePlay)
-const playPauseImg = document.querySelector("#play-pause-img")
-function togglePlay() {
-    if(myVideo.paused || myVideo.ended) {
-        myVideo.play()
-        playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png"
-    } else {
-        myVideo.pause()
-        playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png"
-    }
+const video = document.querySelector("#custom-video-player");
+const playPauseBtn = document.querySelector("#play-pause-btn");
+const playPauseImg = document.querySelector("#play-pause-img");
+const progressBar = document.querySelector("#progress-bar-fill");
+video.removeAttribute("controls");
+video.addEventListener("timeupdate", updateProgressBar);
+function togglePlayPause() {
+  if (video.paused || video.ended) {
+    video.play();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/pause--v1.png";
+  } else {
+    video.pause();
+    playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v1.png";
+  }
+}
+function updateProgressBar() {
+  const value = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = value + "%";
 }
 
 const muteUnmuteBtn = document.querySelector("#mute-unmute-btn")
@@ -22,86 +24,43 @@ console.log(muteUnmuteBtn)
 muteUnmuteBtn.addEventListener("click", toggleSound)
 const muteUnmuteImg = document.querySelector("#mute-unmute-img")
 function toggleSound() {
-    if(myVideo.muted) {
-        myVideo.muted = false
+    if(video.muted) {
+        video.muted = false
         muteUnmuteImg.src = "https://img.icons8.com/ios-glyphs/30/high-volume--v2.png"
-        muteUnmuteBtn.style.backgroundColor = "red"
+        muteUnmuteBtn.style.backgroundColor = "#ff4848"
     } else {
-        myVideo.muted = true
+        video.muted = true
         muteUnmuteImg.src = "https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
-        muteUnmuteBtn.style.backgroundColor = "blue"
+        muteUnmuteBtn.style.backgroundColor = "grey"
     }
 }
 
-myVideo.addEventListener("timeupdate", showProgress)
-const progressBar = document.querySelector("#progress-bar-fill")
-const videoTime = document.querySelector("#video-time")
-function showProgress() {
-    const currentTime = myVideo.currentTime
-    console.log("current time", currentTime.toFixed(2))
-    videoTime.textContent = currentTime.toFixed(2)
-    const progress = currentTime / myVideo.duration *100
-    console.log("progress", progress.toFixed(2))
-    progressBar.style.width = progress + "%"
-}
+const increaseVolumeButton = document.querySelector("#increase-volume-btn");
+increaseVolumeButton.addEventListener("click", increaseVolume);
 
-const step1Btn = document.querySelector("#step-1-btn")
-console.log(step1Btn)
-step1Btn.addEventListener("click", gotoStep1)
-function gotoStep1() {
-    myVideo.currentTime = 19.32
-}
+const decreaseVolumeButton = document.querySelector("#decrease-volume-btn");
+decreaseVolumeButton.addEventListener("click", decreaseVolume);
 
-const step2Btn = document.querySelector("#step-2-btn")
-console.log(step2Btn)
-step2Btn.addEventListener("click", gotoStep2)
-function gotoStep2() {
-    myVideo.currentTime = 47.45
-}
-
-const likes = document.querySelector("#likes")
-console.log(likes)
-let likeCount = 0
-const likesBtn = document.querySelector("#like-btn")
-likesBtn.addEventListener("click", addLikes)
-function addLikes() {
-    likeCount++
-    likes.textContent = likeCount
-}
-
-myVideo.addEventListener("dblclick", toggleFullScreen);
-function toggleFullScreen() {
-    if(!document.fullscreenElement) {
-        myVideo.requestFullscreen()
-    } else {
-        document.exitFullscreen()
+function updateVolume() {
+    const volume = video.volume;
+    console.log("Volume changed:", volume);
+  }
+  
+  function increaseVolume() {
+    if (video.volume < 0.9) {
+      video.volume += 0.1;
     }
-}
+  }
+  
+  function decreaseVolume() {
+    if (video.volume > 0.11) {
+      video.volume -= 0.1;
+    }
+  }
 
-const videos = [ {
-    name: "zenscape", src: "zenscape.mp4"
-},{
-    name: "stardust", src: "stardust.mp4"
-}]
+const replayButton = document.querySelector("#replay-btn");
+replayButton.addEventListener("click", replayVideo)
 
-const firstVideoBtn = document.querySelector("#first-video-btn")
-console.log(firstVideoBtn)
-const secondVideoBtn = document.querySelector("#second-video-btn")
-console.log(secondVideoBtn)
-
-firstVideoBtn.addEventListener("click", function() {
-    chooseVideo(0) // 0 =>first video
-})
-secondVideoBtn.addEventListener("click", function() {
-    chooseVideo(1)
-})
-
-const videoName = document.querySelector("#video-name")
-
-function chooseVideo(no) {
-    myVideo.src = videos[no].src
-    videoName.textContent = videos[no].name
-    console.log(myVideo.src)
-    myVideo.load()
-    myVideo.play()
+function replayVideo() {
+  video.currentTime = 0;
 }
