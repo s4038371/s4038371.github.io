@@ -1,0 +1,161 @@
+/* https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb */
+
+body {
+    background-color: #1a120b;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #e5e5cb;
+    /* color: #3c2a21; */
+    font-size: 1.1rem;
+    gap: 1.5rem;
+  }
+  
+  .outer {
+    border: 2px dashed #e5e5cb7a;
+    width: 400px;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    opacity: 1;
+    /* background-color: cornsilk; */
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    /* border-width: 0; */
+    cursor: pointer;
+    /* background-color: pink; */
+    background-color: transparent;
+    border-color: rgb(249, 93, 93);
+    color: pink;
+    transition: border-color 0.7s ease scale 0.7s ease rotate 0.5s ease;
+    /* transition: background-color 0.5s ease scale 0.5s ease; */
+  }
+  button:hover {
+    /* background-color: rgb(199, 52, 101); */
+    scale: 0.9;
+    border-color: red;
+    rotate: 5deg;
+  }
+
+  .duck-skin {
+    cursor: pointer;
+    transition: fill 0.4s ease-in-out;
+  }
+  .duck-skin:hover {
+    fill: yellow;
+  }
+
+  .duck-icon {
+    transition: scale 0.4s ease;
+    animation: bounce 2s linear infinite;
+  }
+  .duck-icon:hover {
+    scale: 0.9;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {transform: translateY(0px);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+  }
+
+  #box {
+    min-width: 120px;
+    min-height: 120px;
+    background-color: red;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 8px dashed blue;
+    animation-name: color-wheel;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes color-wheel {
+    0% {background-color: red; border-color: blue;}
+    10% {background-color: orange; border-color: green;}
+    20% {background-color: yellow; border-color: yellow;}
+    30% {background-color: green; border-color: orange;}
+    40% {background-color:blue; border-color: red;}
+    50% {background-color: cyan; border-color: purple;}
+    60% {background-color: purple; border-color: cyan;}
+    70% {background-color: blue; border-color: red;}
+    80% {background-color: green; border-color: orange;}
+    90% {background-color: yellow; border-color: yellow;}
+    100% {background-color: red; border-color: blue;}
+  }
+
+  .spinner {
+    min-width: 100px;
+    min-height: 100px;
+    border: 15px solid white;
+    border-top-color: red;
+    border-bottom-color: blue;
+    animation-name: spinning;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 50%;
+  }
+
+  @keyframes spinning {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg}
+  }
+
+  #heart-icon {
+    /* stroke: red; */
+    animation: heartbeat 1s infinite;
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.3;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
+  #side-drawer {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    min-height: 100vh;
+    /* transition: transform 0.5s ease-in-out; */
+    transition: translate 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    border-right: 2px dashed #e5e5cb7a;
+  }
+  
+  #side-drawer ul > li {
+    padding: 10px;
+  }
